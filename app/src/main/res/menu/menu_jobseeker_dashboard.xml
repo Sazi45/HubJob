@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_item_browse_jobs"
+        android:title="Browse Jobs" />
+
+    <item
+        android:id="@+id/menu_item_applied_jobs"
+        android:title="Applied Jobs" />
+
+    <item
+        android:id="@+id/menu_item_saved_jobs"
+        android:title="Saved Jobs" />
+
+    <item
+        android:id="@+id/menu_item_profile"
+        android:title="My Profile" />
+
+
+    <item
+        android:id="@+id/menu_item_logout"
+        android:title="Logout" />
+
+</menu>

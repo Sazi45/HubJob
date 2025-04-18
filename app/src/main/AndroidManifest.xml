@@ -6,9 +6,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/job_hub_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/job_hub_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.HubJob"
         tools:targetApi="31">
@@ -21,6 +21,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".HomeActivity" android:exported="true" />
+        <activity android:name=".JobSeekerActivity" android:exported="true" />
+<!--        <activity android:name=".EmployerActivity" android:exported="true" />-->
+        <activity android:name=".JobSeekerRegistrationActivity" android:exported="true" />
+<!--        <activity android:name=".EmployerRegistrationActivity" android:exported="true" />-->
+        <activity android:name=".ForgotPasswordActivity" android:exported="true" />
+        <activity android:name=".ForgotPasswordSuccessActivity" android:exported="true" />
+        <activity android:name=".JobSeekerDashboardActivity" android:exported="true" />
+<!--        <activity android:name=".EmployerDashboardActivity" android:exported="true" />-->
+        <activity android:name=".JobsActivity" android:exported="true" />
+        <activity android:name=".MyApplicationsActivity" android:exported="true" />
+        <activity android:name=".JobSeekerProfileActivity" android:exported="true" />
+<!--        <activity android:name=".EmployerProfileActivity" android:exported="true" />-->
+<!--        <activity android:name=".PostJobActivity" android:exported="true" />-->
     </application>
 
 </manifest>

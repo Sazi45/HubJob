@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_blue"
+    tools:context=".JobSeekerProfileActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:padding="16dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profileCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="10dp"
+            android:backgroundTint="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:spacing="12dp">
+
+                <TextView
+                    android:id="@+id/profileHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Job Seeker Profile"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_blue"
+                    android:gravity="center"
+                    android:paddingBottom="16dp"/>
+
+                <EditText
+                    android:id="@+id/firstNameField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="First Name"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:backgroundTint="@color/sky_blue"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/lastNameField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Last Name"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:backgroundTint="@color/sky_blue"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/cityField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="City"
+                    android:inputType="text"
+                    android:padding="12dp"
+                    android:backgroundTint="@color/sky_blue"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/suburbField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Suburb"
+                    android:inputType="text"
+                    android:padding="12dp"
+                    android:backgroundTint="@color/sky_blue"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/postalCodeField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Postal Code"
+                    android:inputType="number"
+                    android:padding="12dp"
+                    android:backgroundTint="@color/sky_blue"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/highestEducationField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Highest Education"
+                    android:inputType="text"
+                    android:padding="12dp"
+                    android:backgroundTint="@color/sky_blue"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/genderField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Gender"
+                    android:inputType="text"
+                    android:padding="12dp"
+                    android:backgroundTint="@color/sky_blue"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/raceField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Race"
+                    android:inputType="text"
+                    android:padding="12dp"
+                    android:backgroundTint="@color/sky_blue"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/skillsField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Skills"
+                    android:inputType="textMultiLine"
+                    android:padding="12dp"
+                    android:backgroundTint="@color/sky_blue"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:layout_marginBottom="12dp"/>
+
+                <Button
+                    android:id="@+id/uploadCVButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Upload CV"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="12dp"/>
+
+                <Button
+                    android:id="@+id/saveButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save Profile"
+                    android:backgroundTint="@color/blue"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:id="@+id/settingsLink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile Settings"
+                    android:textColor="@color/blue"
+                    android:textSize="14sp"
+                    android:layout_gravity="center"
+                    android:paddingBottom="8dp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
