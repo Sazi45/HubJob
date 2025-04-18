@@ -26,12 +26,12 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-//        cardEmployer.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(HomeActivity.this, EmployerActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        cardEmployer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, EmployerActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

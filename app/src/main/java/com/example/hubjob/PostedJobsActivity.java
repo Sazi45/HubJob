@@ -3,6 +3,7 @@ package com.example.hubjob;
 import android.os.Bundle;
 import android.util.Log;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,7 +14,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JobsActivity extends AppCompatActivity {
+public class PostedJobsActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     List<JobPostModel> jobList;
@@ -21,11 +22,11 @@ public class JobsActivity extends AppCompatActivity {
     FirebaseFirestore db;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_jobs);
+        setContentView(R.layout.activity_posted_jobs);
 
-        recyclerView = findViewById(R.id.recyclerJobs);
+        recyclerView = findViewById(R.id.recyclerPostedJobs);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         jobList = new ArrayList<>();
@@ -49,6 +50,6 @@ public class JobsActivity extends AppCompatActivity {
                     }
                     adapter.notifyDataSetChanged();
                 })
-                .addOnFailureListener(e -> Log.e("JobsActivity", "Error fetching jobs", e));
+                .addOnFailureListener(e -> Log.e("PostedJobsActivity", "Error fetching jobs", e));
     }
 }
