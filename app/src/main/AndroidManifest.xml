@@ -34,6 +34,7 @@
         <activity android:name=".JobsActivity" android:exported="true" />
         <activity android:name=".MyApplicationsActivity" android:exported="true" />
         <activity android:name=".JobSeekerProfileActivity" android:exported="true" />
+        <activity android:name=".ForgotPasswordFailedActivity" android:exported="true" />
 <!--        <activity android:name=".EmployerProfileActivity" android:exported="true" />-->
 <!--        <activity android:name=".PostJobActivity" android:exported="true" />-->
     </application>

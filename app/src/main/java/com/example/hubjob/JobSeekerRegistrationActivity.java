@@ -83,10 +83,25 @@ public class JobSeekerRegistrationActivity extends AppCompatActivity {
                     .addOnCompleteListener(this, task -> {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(JobSeekerRegistrationActivity.this, "Registration successful!", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(JobSeekerRegistrationActivity.this, JobSeekerActivity.class);
-                            startActivity(intent);
-                            finish();
+
+                            if (user != null) {
+                                user.sendEmailVerification()
+                                        .addOnCompleteListener(verificationTask -> {
+                                            if (verificationTask.isSuccessful()) {
+                                                Toast.makeText(JobSeekerRegistrationActivity.this,
+                                                        "Registration successful! Please check your email to verify your account.",
+                                                        Toast.LENGTH_LONG).show();
+                                            } else {
+                                                Toast.makeText(JobSeekerRegistrationActivity.this,
+                                                        "Verification email failed to send.",
+                                                        Toast.LENGTH_SHORT).show();
+                                            }
+
+                                            Intent intent = new Intent(JobSeekerRegistrationActivity.this, JobSeekerActivity.class);
+                                            startActivity(intent);
+                                            finish();
+                                        });
+                            }
                         } else {
                             Toast.makeText(JobSeekerRegistrationActivity.this, "Registration failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         }
