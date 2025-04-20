@@ -20,7 +20,7 @@ public class JobApplicationModel {
     private String jobPostedBy;
     private long timestamp;
 
-    // Default constructor for Firestore
+
     public JobApplicationModel() {}
 
     // Constructor with all fields

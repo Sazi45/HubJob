@@ -61,7 +61,7 @@ public class JobSeekerDashboardActivity extends AppCompatActivity {
         cardApplications.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(JobSeekerDashboardActivity.this, MyApplicationsActivity.class);
+                Intent intent = new Intent(JobSeekerDashboardActivity.this, MyApplications.class);
                 startActivity(intent);
             }
         });
@@ -93,7 +93,7 @@ public class JobSeekerDashboardActivity extends AppCompatActivity {
                     return true;
                 } else if (itemId == R.id.menu_item_applied_jobs) {
                     Toast.makeText(JobSeekerDashboardActivity.this, "Jobs you applied for", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(JobSeekerDashboardActivity.this, MyApplicationsActivity.class);
+                    Intent intent = new Intent(JobSeekerDashboardActivity.this, MyApplications.class);
                     startActivity(intent);
                     return true;
                 } else if (itemId == R.id.menu_item_saved_jobs) {

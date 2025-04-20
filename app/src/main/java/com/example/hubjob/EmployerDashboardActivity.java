@@ -45,6 +45,22 @@ public class EmployerDashboardActivity extends AppCompatActivity {
             welcomeText.setText("Welcome, Guest");
         }
 
+
+        cardManageJobPosts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EmployerDashboardActivity.this, AdminJobsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        cardJobPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EmployerDashboardActivity.this, PostJobActivity.class);
+                startActivity(intent);
+            }
+        });
         menuIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

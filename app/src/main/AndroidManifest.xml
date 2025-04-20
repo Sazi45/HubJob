@@ -32,7 +32,7 @@
         <activity android:name=".JobSeekerDashboardActivity" android:exported="true" />
        <activity android:name=".EmployerDashboardActivity" android:exported="true" />
         <activity android:name=".JobsActivity" android:exported="true" />
-        <activity android:name=".MyApplicationsActivity" android:exported="true" />
+        <activity android:name=".MyApplications" android:exported="true" />
         <activity android:name=".JobSeekerProfileActivity" android:exported="true" />
         <activity android:name=".ForgotPasswordFailedActivity" android:exported="true" />
        <activity android:name=".EmployerProfileActivity" android:exported="true" />
@@ -41,6 +41,7 @@
        <activity android:name=".JobDetailsActivity" android:exported="true" />
        <activity android:name=".MySavedJobs" android:exported="true" />
        <activity android:name=".MatchedJobsActivity" android:exported="true" />
+       <activity android:name=".AdminJobsActivity" android:exported="true" />
     </application>
 
 </manifest>
