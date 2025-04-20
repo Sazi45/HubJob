@@ -14,6 +14,10 @@
         android:title="Saved Jobs" />
 
     <item
+        android:id="@+id/menu_item_recommended_jobs"
+        android:title="Recommended Jobs" />
+
+    <item
         android:id="@+id/menu_item_profile"
         android:title="My Profile" />
 

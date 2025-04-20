@@ -93,9 +93,18 @@ public class JobSeekerDashboardActivity extends AppCompatActivity {
                     return true;
                 } else if (itemId == R.id.menu_item_applied_jobs) {
                     Toast.makeText(JobSeekerDashboardActivity.this, "Jobs you applied for", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(JobSeekerDashboardActivity.this, MyApplicationsActivity.class);
+                    startActivity(intent);
                     return true;
                 } else if (itemId == R.id.menu_item_saved_jobs) {
                     Toast.makeText(JobSeekerDashboardActivity.this, "Jobs you have saved", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(JobSeekerDashboardActivity.this, MySavedJobs.class);
+                    startActivity(intent);
+                    return true;
+                }  else if (itemId == R.id.menu_item_recommended_jobs) {
+                    Toast.makeText(JobSeekerDashboardActivity.this, "Your jobs recommendation", Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(JobSeekerDashboardActivity.this, MatchedJobsActivity.class);
+//                    startActivity(intent);
                     return true;
                 } else if (itemId == R.id.menu_item_profile) {
                     Intent intent = new Intent(JobSeekerDashboardActivity.this, JobSeekerProfileActivity.class);
@@ -103,8 +112,8 @@ public class JobSeekerDashboardActivity extends AppCompatActivity {
                 }else if (itemId == R.id.menu_item_logout) {
                     FirebaseAuth mAuth = FirebaseAuth.getInstance();
                     mAuth.signOut();
-                    Intent intent = new Intent(JobSeekerDashboardActivity.this, HomeActivity.class);  // Redirect to login page
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);  // Clear the back stack
+                    Intent intent = new Intent(JobSeekerDashboardActivity.this, HomeActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     finish();
                     return true;

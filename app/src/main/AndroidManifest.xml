@@ -39,6 +39,8 @@
        <activity android:name=".PostJobActivity" android:exported="true" />
        <activity android:name=".PostedJobsActivity" android:exported="true" />
        <activity android:name=".JobDetailsActivity" android:exported="true" />
+       <activity android:name=".MySavedJobs" android:exported="true" />
+       <activity android:name=".MatchedJobsActivity" android:exported="true" />
     </application>
 
 </manifest>

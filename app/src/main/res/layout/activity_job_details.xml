@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_blue"
+    android:background="@drawable/job_hub_logo"
     tools:context=".JobDetailsActivity">
 
     <!-- CardView Container -->
@@ -21,7 +21,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="@color/white">
+        android:backgroundTint="@color/grey">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -126,7 +126,7 @@
 
             <!-- Save Button -->
             <Button
-                android:id="@+id/saveButton"
+                android:id="@+id/saveJobButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Save"
