@@ -18,7 +18,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class EmployerDashboardActivity extends AppCompatActivity {
 
-    // Declare the views
     private TextView welcomeText;
     private CardView cardJobs;
     private CardView cardJobPost;

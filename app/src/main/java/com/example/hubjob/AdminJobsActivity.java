@@ -14,25 +14,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AdminJobsActivity extends AppCompatActivity {
-
-    RecyclerView recyclerView;
-    List<JobPostModel> jobList;
-    JobPostAdapter adapter;
     FirebaseFirestore db;
+    RecyclerView recyclerView;
+    AdminJobsAdapter adapter;
+    List<JobPostModel> jobList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_jobs);
 
-        recyclerView = findViewById(R.id.recyclerAdminJobs);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        jobList = new ArrayList<>();
-        adapter = new JobPostAdapter(jobList); // No click listener
-        recyclerView.setAdapter(adapter);
-
         db = FirebaseFirestore.getInstance();
+        recyclerView = findViewById(R.id.recycler_admin_jobs);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new AdminJobsAdapter(jobList);
+        recyclerView.setAdapter(adapter);
 
         fetchJobs();
     }
