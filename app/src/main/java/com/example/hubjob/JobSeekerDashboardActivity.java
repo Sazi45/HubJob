@@ -101,10 +101,20 @@ public class JobSeekerDashboardActivity extends AppCompatActivity {
                     Intent intent = new Intent(JobSeekerDashboardActivity.this, MySavedJobs.class);
                     startActivity(intent);
                     return true;
+                }  else if (itemId == R.id.menu_item_manage_job_preference) {
+                    Toast.makeText(JobSeekerDashboardActivity.this, "Manage Job Preference", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(JobSeekerDashboardActivity.this, ManageJobPreferenceActivity.class);
+                    startActivity(intent);
+                    return true;
                 }  else if (itemId == R.id.menu_item_recommended_jobs) {
                     Toast.makeText(JobSeekerDashboardActivity.this, "Your jobs recommendation", Toast.LENGTH_SHORT).show();
-//                    Intent intent = new Intent(JobSeekerDashboardActivity.this, MatchedJobsActivity.class);
-//                    startActivity(intent);
+                    Intent intent = new Intent(JobSeekerDashboardActivity.this, RecommendedJobsActivity.class);
+                    startActivity(intent);
+                    return true;
+                } else if (itemId == R.id.menu_item_set_job_alert) {
+                    Toast.makeText(JobSeekerDashboardActivity.this, "Set Job Alert", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(JobSeekerDashboardActivity.this, MyJobAlertActivity.class);
+                    startActivity(intent);
                     return true;
                 } else if (itemId == R.id.menu_item_profile) {
                     Intent intent = new Intent(JobSeekerDashboardActivity.this, JobSeekerProfileActivity.class);

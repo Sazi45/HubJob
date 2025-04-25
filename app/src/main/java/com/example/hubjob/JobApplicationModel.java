@@ -1,6 +1,9 @@
 package com.example.hubjob;
 
-public class JobApplicationModel {
+import java.io.Serializable;
+
+public class JobApplicationModel implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     private String userEmail;
     private String firstName;
@@ -20,10 +23,8 @@ public class JobApplicationModel {
     private String jobPostedBy;
     private long timestamp;
 
-
     public JobApplicationModel() {}
 
-    // Constructor with all fields
     public JobApplicationModel(String userEmail, String firstName, String lastName, String gender,
                                String highestEducation, String race, String skills, String city, String postalCode,
                                String jobTitle, String jobDescription, String jobLocation, String jobSalary,
@@ -47,140 +48,55 @@ public class JobApplicationModel {
         this.timestamp = timestamp;
     }
 
-    // Getters and Setters
-    public String getUserEmail() {
-        return userEmail;
-    }
+    // Getters and setters for all fields
+    public String getUserEmail() { return userEmail; }
+    public void setUserEmail(String userEmail) { this.userEmail = userEmail; }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
+    public String getFirstName() { return firstName; }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
 
-    public String getFirstName() {
-        return firstName;
-    }
+    public String getLastName() { return lastName; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+    public String getGender() { return gender; }
+    public void setGender(String gender) { this.gender = gender; }
 
-    public String getLastName() {
-        return lastName;
-    }
+    public String getHighestEducation() { return highestEducation; }
+    public void setHighestEducation(String highestEducation) { this.highestEducation = highestEducation; }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+    public String getRace() { return race; }
+    public void setRace(String race) { this.race = race; }
 
-    public String getGender() {
-        return gender;
-    }
+    public String getSkills() { return skills; }
+    public void setSkills(String skills) { this.skills = skills; }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
+    public String getCity() { return city; }
+    public void setCity(String city) { this.city = city; }
 
-    public String getHighestEducation() {
-        return highestEducation;
-    }
+    public String getPostalCode() { return postalCode; }
+    public void setPostalCode(String postalCode) { this.postalCode = postalCode; }
 
-    public void setHighestEducation(String highestEducation) {
-        this.highestEducation = highestEducation;
-    }
+    public String getJobTitle() { return jobTitle; }
+    public void setJobTitle(String jobTitle) { this.jobTitle = jobTitle; }
 
-    public String getRace() {
-        return race;
-    }
+    public String getJobDescription() { return jobDescription; }
+    public void setJobDescription(String jobDescription) { this.jobDescription = jobDescription; }
 
-    public void setRace(String race) {
-        this.race = race;
-    }
+    public String getJobLocation() { return jobLocation; }
+    public void setJobLocation(String jobLocation) { this.jobLocation = jobLocation; }
 
-    public String getSkills() {
-        return skills;
-    }
+    public String getJobSalary() { return jobSalary; }
+    public void setJobSalary(String jobSalary) { this.jobSalary = jobSalary; }
 
-    public void setSkills(String skills) {
-        this.skills = skills;
-    }
+    public String getJobExperience() { return jobExperience; }
+    public void setJobExperience(String jobExperience) { this.jobExperience = jobExperience; }
 
-    public String getCity() {
-        return city;
-    }
+    public String getJobCategory() { return jobCategory; }
+    public void setJobCategory(String jobCategory) { this.jobCategory = jobCategory; }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
+    public String getJobPostedBy() { return jobPostedBy; }
+    public void setJobPostedBy(String jobPostedBy) { this.jobPostedBy = jobPostedBy; }
 
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    public String getJobTitle() {
-        return jobTitle;
-    }
-
-    public void setJobTitle(String jobTitle) {
-        this.jobTitle = jobTitle;
-    }
-
-    public String getJobDescription() {
-        return jobDescription;
-    }
-
-    public void setJobDescription(String jobDescription) {
-        this.jobDescription = jobDescription;
-    }
-
-    public String getJobLocation() {
-        return jobLocation;
-    }
-
-    public void setJobLocation(String jobLocation) {
-        this.jobLocation = jobLocation;
-    }
-
-    public String getJobSalary() {
-        return jobSalary;
-    }
-
-    public void setJobSalary(String jobSalary) {
-        this.jobSalary = jobSalary;
-    }
-
-    public String getJobExperience() {
-        return jobExperience;
-    }
-
-    public void setJobExperience(String jobExperience) {
-        this.jobExperience = jobExperience;
-    }
-
-    public String getJobCategory() {
-        return jobCategory;
-    }
-
-    public void setJobCategory(String jobCategory) {
-        this.jobCategory = jobCategory;
-    }
-
-    public String getJobPostedBy() {
-        return jobPostedBy;
-    }
-
-    public void setJobPostedBy(String jobPostedBy) {
-        this.jobPostedBy = jobPostedBy;
-    }
-
-    public long getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(long timestamp) {
-        this.timestamp = timestamp;
-    }
+    public long getTimestamp() { return timestamp; }
+    public void setTimestamp(long timestamp) { this.timestamp = timestamp; }
 }

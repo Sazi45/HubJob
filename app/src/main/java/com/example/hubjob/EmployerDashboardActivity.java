@@ -45,6 +45,14 @@ public class EmployerDashboardActivity extends AppCompatActivity {
         }
 
 
+        cardJobs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EmployerDashboardActivity.this, EmployerApplications.class);
+                startActivity(intent);
+            }
+        });
+
         cardManageJobPosts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

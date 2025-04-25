@@ -40,8 +40,15 @@
        <activity android:name=".PostedJobsActivity" android:exported="true" />
        <activity android:name=".JobDetailsActivity" android:exported="true" />
        <activity android:name=".MySavedJobs" android:exported="true" />
-       <activity android:name=".MatchedJobsActivity" android:exported="true" />
+       <activity android:name=".RecommendedJobsActivity" android:exported="true" />
        <activity android:name=".AdminJobsActivity" android:exported="true" />
+       <activity android:name=".EmployerApplications" android:exported="true" />
+       <activity android:name=".ApplicantDetailsActivity" android:exported="true" />
+       <activity android:name=".MyJobAlertActivity" android:exported="true" />
+       <activity android:name=".MyJobAlertSuccessActivity" android:exported="true" />
+       <activity android:name=".MyJobAlertErrorActivity" android:exported="true" />
+       <activity android:name=".ManageJobPreferenceActivity" android:exported="true" />
+       <activity android:name=".DeleteSuccessActivity" android:exported="true" />
     </application>
 
 </manifest>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/job_hub_logo"
+    android:elevation="4dp"
+    android:padding="16dp">
+
+    <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<!-- Job Icon -->
+<ImageView
+    android:id="@+id/jobIcon"
+    android:layout_width="48dp"
+    android:layout_height="48dp"
+    android:src="@drawable/ic_applications"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginBottom="8dp" />
+
+<TextView
+    android:id="@+id/jobTitleText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Job Title"
+    android:textStyle="bold"
+    android:textSize="18sp"
+    android:layout_marginTop="8dp"/>
+
+<TextView
+    android:id="@+id/jobDescriptionText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Job Description"
+    android:textSize="14sp"
+    android:layout_marginTop="4dp"/>
+
+<TextView
+    android:id="@+id/jobLocationText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Location"
+    android:layout_marginTop="4dp"
+    android:textSize="13sp"/>
+
+<TextView
+    android:id="@+id/jobSkillsText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Skills"
+    android:layout_marginTop="2dp"
+    android:textSize="13sp"/>
+</LinearLayout>
+    </androidx.cardview.widget.CardView>

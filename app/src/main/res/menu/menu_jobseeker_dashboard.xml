@@ -14,8 +14,16 @@
         android:title="Saved Jobs" />
 
     <item
+        android:id="@+id/menu_item_manage_job_preference"
+        android:title="Manage Job Preferences" />
+
+    <item
         android:id="@+id/menu_item_recommended_jobs"
         android:title="Recommended Jobs" />
+
+    <item
+        android:id="@+id/menu_item_set_job_alert"
+        android:title="Set Job Alert" />
 
     <item
         android:id="@+id/menu_item_profile"
