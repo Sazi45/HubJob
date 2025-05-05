@@ -5,7 +5,6 @@ import javax.mail.*;
 import javax.mail.internet.*;
 
 public class GmailSender {
-
     private final String senderEmail = "developementengineering@gmail.com"; // Replace with your Gmail
     private final String senderPassword = "dsuggidyyjvjhhvs";     // Use App Password if 2FA enabled
 

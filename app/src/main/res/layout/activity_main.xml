@@ -16,7 +16,7 @@
         android:textAllCaps="false"
         android:backgroundTint="@color/white"
         android:textColor="@color/blue"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

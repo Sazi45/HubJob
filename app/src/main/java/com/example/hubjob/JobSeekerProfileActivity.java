@@ -6,14 +6,18 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,10 +26,9 @@ public class JobSeekerProfileActivity extends AppCompatActivity {
     EditText firstName, lastName, gender, race, city, suburb, postalCode, skills, education;
     Button saveButton, uploadCVButton;
     FirebaseFirestore db;
-    FirebaseStorage storage;
-    StorageReference storageRef;
     String profileDocId = null;
     Uri selectedCVUri = null;
+    DBHelper dbHelper;
 
     // For handling result of file picker
     ActivityResultLauncher<Intent> filePickerLauncher;
@@ -36,8 +39,7 @@ public class JobSeekerProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_job_seeker_profile);
 
         db = FirebaseFirestore.getInstance();
-        storage = FirebaseStorage.getInstance();
-        storageRef = storage.getReference();
+        dbHelper = new DBHelper(this);
 
         // Bind UI elements
         firstName = findViewById(R.id.firstNameField);
@@ -123,52 +125,54 @@ public class JobSeekerProfileActivity extends AppCompatActivity {
         profile.put("skills", skillsStr);
         profile.put("highestEducation", eduStr);
 
-        // If CV is selected, upload it to Firebase Storage
+        // Save CV to SQLite if selected
         if (selectedCVUri != null) {
-            StorageReference cvRef = storageRef.child("CVs/" + emailStr + ".pdf");
+            try {
+                InputStream inputStream = getContentResolver().openInputStream(selectedCVUri);
+                byte[] cvBytes = readBytes(inputStream);
+                boolean saved = dbHelper.saveCV(emailStr, cvBytes);
 
-            cvRef.putFile(selectedCVUri).addOnSuccessListener(taskSnapshot -> {
-                cvRef.getDownloadUrl().addOnSuccessListener(uri -> {
-                    profile.put("cvUrl", uri.toString());  // Save CV URL in Firestore
-
-                    if (profileDocId != null) {
-                        db.collection("JobSeekerProfile").document(profileDocId)
-                                .set(profile)
-                                .addOnSuccessListener(aVoid -> {
-                                    Toast.makeText(this, "Profile updated!", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(this, JobSeekerDashboardActivity.class));
-                                });
-                    } else {
-                        db.collection("JobSeekerProfile").add(profile)
-                                .addOnSuccessListener(aVoid -> {
-                                    Toast.makeText(this, "Profile saved!", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(this, JobSeekerDashboardActivity.class));
-                                });
-                    }
-                });
-            }).addOnFailureListener(e -> Toast.makeText(this, "Failed to upload CV", Toast.LENGTH_SHORT).show());
-        } else {
-            // If no CV is selected, just save the profile without the CV URL
-            if (profileDocId != null) {
-                db.collection("JobSeekerProfile").document(profileDocId)
-                        .set(profile)
-                        .addOnSuccessListener(aVoid -> {
-                            Toast.makeText(this, "Profile updated!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(this, JobSeekerDashboardActivity.class));
-                        });
-            } else {
-                db.collection("JobSeekerProfile").add(profile)
-                        .addOnSuccessListener(aVoid -> {
-                            Toast.makeText(this, "Profile saved!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(this, JobSeekerDashboardActivity.class));
-                        });
+                if (!saved) {
+                    Toast.makeText(this, "Failed to save CV to SQLite", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(this, "Error reading CV: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                return;
             }
+        }
+
+        if (profileDocId != null) {
+            db.collection("JobSeekerProfile").document(profileDocId)
+                    .set(profile)
+                    .addOnSuccessListener(aVoid -> {
+                        Toast.makeText(this, "Profile updated!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(this, JobSeekerDashboardActivity.class));
+                    });
+        } else {
+            db.collection("JobSeekerProfile").add(profile)
+                    .addOnSuccessListener(aVoid -> {
+                        Toast.makeText(this, "Profile saved!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(this, JobSeekerDashboardActivity.class));
+                    });
         }
     }
 
     private void openFilePicker() {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("application/pdf");  // Only allow PDF files
+        intent.setType("application/pdf");
         filePickerLauncher.launch(intent);
+    }
+
+    private byte[] readBytes(InputStream inputStream) throws IOException {
+        ByteArrayOutputStream byteBuffer = new ByteArrayOutputStream();
+        int bufferSize = 1024;
+        byte[] buffer = new byte[bufferSize];
+        int len;
+        while ((len = inputStream.read(buffer)) != -1) {
+            byteBuffer.write(buffer, 0, len);
+        }
+        return byteBuffer.toByteArray();
     }
 }
