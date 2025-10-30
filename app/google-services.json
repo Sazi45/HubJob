@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "314568615441",
+    "project_id": "hubjob-2afa5",
+    "storage_bucket": "hubjob-2afa5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314568615441:android:b73d10b12d7a15655873b0",
+        "android_client_info": {
+          "package_name": "com.example.hubjob"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAisw1Hd0MuXGPIwIhHGHGPPaGpHCGyjlU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
